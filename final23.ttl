@@ -1,0 +1,498 @@
+@prefix : <http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield> .
+
+<http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+rdf:type rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy
+<http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain :Asset ;
+                                                          rdfs:range <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service> .
+
+
+###  http://purl.org/cyber/stix/mitigates#hasProtectionProgram
+<http://purl.org/cyber/stix/mitigates#hasProtectionProgram> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain :MitigationPlan ;
+                                                            rdfs:range :ProtectionProgram .
+
+
+###  http://purl.org/cyber/stix/mitigates#mitigates
+<http://purl.org/cyber/stix/mitigates#mitigates> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://www.purl.org/cyber/stix#CourseOfAction> ;
+                                                 rdfs:range <http://purl.org/cyber/ucoAttack#Attack> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#belongTo
+:belongTo rdf:type owl:ObjectProperty ;
+          rdfs:domain :Asset ;
+          rdfs:range :Owner .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#commandedBy
+:commandedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :MilitaryUnit ;
+             rdfs:range :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#consideredFor
+:consideredFor rdf:type owl:ObjectProperty ;
+               rdfs:domain :MitigationPlan ;
+               rdfs:range <http://www.w3.org/ns/sosa/Observation#Observation> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#grants
+:grants rdf:type owl:ObjectProperty ;
+        rdfs:domain :FieldArmy ;
+        rdfs:range <http://purl.org/abac-ontology#Permission> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasAccess
+:hasAccess rdf:type owl:ObjectProperty ;
+           rdfs:domain :MilitaryUnit ;
+           rdfs:range :Asset .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasAttack
+:hasAttack rdf:type owl:ObjectProperty ;
+           rdfs:domain :MilitaryUnit ;
+           rdfs:range <http://purl.org/cyber/ucoAttack#Attack> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasBandwidth
+:hasBandwidth rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://www.w3.org/ns/sosa/Observation#Observation> ;
+              rdfs:range :BandwidthObservation .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasPattern
+:hasPattern rdf:type owl:ObjectProperty ;
+            rdfs:domain :CyberAttack ;
+            rdfs:range <http://purl.org/cyber/ucoAttackPattern#AttackPattern> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasResult
+:hasResult rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://www.w3.org/ns/sosa/Observation#Observation> ;
+           rdfs:range <http://www.w3.org/ns/sosa/Result#Result> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasSensor
+:hasSensor rdf:type owl:ObjectProperty ;
+           rdfs:domain :MovableAsset ;
+           rdfs:range :Sensor .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasVideoFeed
+:hasVideoFeed rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://www.w3.org/ns/sosa/Observation#Observation> ;
+              rdfs:range :VideoFeed .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#listedPlan
+:listedPlan rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://www.purl.org/cyber/stix#CourseOfAction> ;
+            rdfs:range :MitigationPlan .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#providedFor
+:providedFor rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://purl.org/abac-ontology#Permission> ;
+             rdfs:range <http://purl.org/abac-ontology#RequestedAction> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#request
+:request rdf:type owl:ObjectProperty ;
+         rdfs:domain :MilitaryPersonnel ;
+         rdfs:range <http://purl.org/abac-ontology#Permission> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#Location
+<http://www.w3.org/2003/01/geo/wgs84_pos#Location> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain :Asset ;
+                                                   rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+
+
+###  http://www.w3.org/ns/sosa/madeObservation#madeObservation
+<http://www.w3.org/ns/sosa/madeObservation#madeObservation> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain :Asset ;
+                                                            rdfs:range <http://www.w3.org/ns/sosa/Observation#Observation> .
+
+
+###  http://www.w3.org/ns/sosa/phenomenonTime#phenomenonTime
+<http://www.w3.org/ns/sosa/phenomenonTime#phenomenonTime> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://www.w3.org/ns/sosa/Observation#Observation> ;
+                                                          rdfs:range <http://www.w3.org/2006/time#TemporalEntity> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/cyber/ucoAttackPattern#resultTime
+<http://purl.org/cyber/ucoAttackPattern#resultTime> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <http://www.w3.org/2006/time#TemporalEntity> ;
+                                                    rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#code
+:code rdf:type owl:DatatypeProperty ;
+      rdfs:domain :ProtectionProgram ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#highRange
+:highRange rdf:type owl:DatatypeProperty ;
+           rdfs:domain :BandwidthAttack ;
+           rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#lowRange
+:lowRange rdf:type owl:DatatypeProperty ;
+          rdfs:domain :BandwidthAttack ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#value
+:value rdf:type owl:DatatypeProperty ;
+       rdfs:domain <http://www.w3.org/ns/sosa/Result#Result> ;
+       rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service
+<http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service> rdf:type owl:Class .
+
+
+###  http://purl.org/abac-ontology#Permission
+<http://purl.org/abac-ontology#Permission> rdf:type owl:Class .
+
+
+###  http://purl.org/abac-ontology#PermittedAction
+<http://purl.org/abac-ontology#PermittedAction> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.org/abac-ontology#RequestedAction> .
+
+
+###  http://purl.org/abac-ontology#ProhibitedAction
+<http://purl.org/abac-ontology#ProhibitedAction> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.org/abac-ontology#RequestedAction> .
+
+
+###  http://purl.org/abac-ontology#RequestedAction
+<http://purl.org/abac-ontology#RequestedAction> rdf:type owl:Class .
+
+
+###  http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigation
+<http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigation> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.purl.org/cyber/stix#CourseOfAction> .
+
+
+###  http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigationPlan
+<http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigationPlan> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf :MitigationPlan .
+
+
+###  http://purl.org/cyber/ucoAttack#Attack
+<http://purl.org/cyber/ucoAttack#Attack> rdf:type owl:Class .
+
+
+###  http://purl.org/cyber/ucoAttackPattern#AttackPattern
+<http://purl.org/cyber/ucoAttackPattern#AttackPattern> rdf:type owl:Class .
+
+
+###  http://www.purl.org/cyber/stix#CourseOfAction
+<http://www.purl.org/cyber/stix#CourseOfAction> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset
+:Asset rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthAttack
+:BandwidthAttack rdf:type owl:Class ;
+                 rdfs:subClassOf :CyberAttack .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation
+:BandwidthObservation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Battalion
+:Battalion rdf:type owl:Class ;
+           rdfs:subClassOf :MilitaryUnit .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Blue
+:Blue rdf:type owl:Class ;
+      rdfs:subClassOf :Owner ;
+      owl:disjointWith :Gray .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Brigade
+:Brigade rdf:type owl:Class ;
+         rdfs:subClassOf :MilitaryUnit .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BrigadierGeneral
+:BrigadierGeneral rdf:type owl:Class ;
+                  rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Camera
+:Camera rdf:type owl:Class ;
+        rdfs:subClassOf :Sensor .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Captain
+:Captain rdf:type owl:Class ;
+         rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Company
+:Company rdf:type owl:Class ;
+         rdfs:subClassOf :MilitaryUnit .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Corps
+:Corps rdf:type owl:Class ;
+       rdfs:subClassOf :MilitaryUnit .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#CyberAttack
+:CyberAttack rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.org/cyber/ucoAttack#Attack> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Division
+:Division rdf:type owl:Class ;
+          rdfs:subClassOf :MilitaryUnit .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#FieldArmy
+:FieldArmy rdf:type owl:Class ;
+           rdfs:subClassOf :MilitaryUnit .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#General
+:General rdf:type owl:Class ;
+         rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Gray
+:Gray rdf:type owl:Class ;
+      rdfs:subClassOf :Owner ;
+      owl:disjointWith :Red .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ImmovableAsset
+:ImmovableAsset rdf:type owl:Class ;
+                rdfs:subClassOf :Asset .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Kinetic
+:Kinetic rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.org/cyber/ucoAttack#Attack> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#LieutenantColonel
+:LieutenantColonel rdf:type owl:Class ;
+                   rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#LieutenantGeneral
+:LieutenantGeneral rdf:type owl:Class ;
+                   rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MajorGeneral
+:MajorGeneral rdf:type owl:Class ;
+              rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel
+:MilitaryPersonnel rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit
+:MilitaryUnit rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MitigationPlan
+:MitigationPlan rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MovableAsset
+:MovableAsset rdf:type owl:Class ;
+              rdfs:subClassOf :Asset .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Owner
+:Owner rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Platoon
+:Platoon rdf:type owl:Class ;
+         rdfs:subClassOf :MilitaryUnit .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ProtectionProgram
+:ProtectionProgram rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Red
+:Red rdf:type owl:Class ;
+     rdfs:subClassOf :Owner .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#SecondLieutenant
+:SecondLieutenant rdf:type owl:Class ;
+                  rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Sensor
+:Sensor rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Sergeant
+:Sergeant rdf:type owl:Class ;
+          rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Soldier
+:Soldier rdf:type owl:Class ;
+         rdfs:subClassOf :MilitaryPersonnel .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Squad
+:Squad rdf:type owl:Class ;
+       rdfs:subClassOf :MilitaryUnit .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#VideoFeed
+:VideoFeed rdf:type owl:Class .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
+<http://www.w3.org/2003/01/geo/wgs84_pos#Point> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Observation#Observation
+<http://www.w3.org/ns/sosa/Observation#Observation> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Result#Result
+<http://www.w3.org/ns/sosa/Result#Result> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/cyber/stix/mitigates#BandwidthObservation1
+<http://purl.org/cyber/stix/mitigates#BandwidthObservation1> rdf:type owl:NamedIndividual ;
+                                                             :hasResult <http://purl.org/cyber/stix/mitigates#21> .
+
+
+###  http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigation-stage1
+<http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigation-stage1> rdf:type owl:NamedIndividual ,
+                                                                                   <http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigation> ;
+                                                                          <http://purl.org/cyber/stix/mitigates#mitigates> :Stage1BA ,
+                                                                                                                           :Stage3BA ;
+                                                                          :listedPlan <http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigationplan-25> .
+
+
+###  http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigationplan-25
+<http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigationplan-25> rdf:type owl:NamedIndividual ,
+                                                                                   <http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigationPlan> ;
+                                                                          <http://purl.org/cyber/stix/mitigates#hasProtectionProgram> <http://purl.org/cyber/stix/mitigates#protectionprogram-bandwidth-attack-stage1> .
+
+
+###  http://purl.org/cyber/stix/mitigates#protectionprogram-bandwidth-attack-stage1
+<http://purl.org/cyber/stix/mitigates#protectionprogram-bandwidth-attack-stage1> rdf:type owl:NamedIndividual ,
+                                                                                          :ProtectionProgram ;
+                                                                                 :code "VideoViewer.py"^^xsd:string .
+
+
+###  http://purl.org/cyber/stix/mitigates#21
+<http://purl.org/cyber/stix/mitigates#21> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/sosa/Result#Result> ;
+                                          :value "21.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation1
+:BandwidthObservation1 rdf:type owl:NamedIndividual ,
+                                :BandwidthObservation ;
+                       :hasResult <http://purl.org/cyber/stix/mitigates#21> ;
+                       <http://www.w3.org/ns/sosa/phenomenonTime#phenomenonTime> <http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#2021-10-11T01:30:25> .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Cam12
+:Cam12 rdf:type owl:NamedIndividual ,
+                :Camera .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage1BA
+:Stage1BA rdf:type owl:NamedIndividual ,
+                   :BandwidthAttack ;
+          :highRange "200.0"^^xsd:float ;
+          :lowRange "100.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage2BA
+:Stage2BA rdf:type owl:NamedIndividual ,
+                   :BandwidthAttack ;
+          :highRange "99.0"^^xsd:float ;
+          :lowRange "51.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage3BA
+:Stage3BA rdf:type owl:NamedIndividual ,
+                   :BandwidthAttack ;
+          :highRange "50.0"^^xsd:float ;
+          :lowRange "0.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UAS
+:UAS rdf:type owl:NamedIndividual ,
+              :MovableAsset .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UAV1
+:UAV1 rdf:type owl:NamedIndividual ,
+               :MovableAsset .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UGS
+:UGS rdf:type owl:NamedIndividual ,
+              :ImmovableAsset .
+
+
+###  http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#2021-10-11T01:30:25
+<http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#2021-10-11T01:30:25> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://www.w3.org/2006/time#TemporalEntity> ;
+                                                                                        :value "21.0"^^xsd:float .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

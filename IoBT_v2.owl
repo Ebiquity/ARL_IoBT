@@ -1,0 +1,872 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#"
+     xml:base="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:phenomenonTime="http://www.w3.org/ns/sosa/phenomenonTime#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#hasProtectionProgram -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/cyber/stix/mitigates#hasProtectionProgram">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MitigationPlan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ProtectionProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#mitigates -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/cyber/stix/mitigates#mitigates">
+        <rdfs:domain rdf:resource="http://www.purl.org/cyber/stix#CourseOfAction"/>
+        <rdfs:range rdf:resource="http://purl.org/cyber/ucoAttack#Attack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#belongTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#belongTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Owner"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#commandedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#commandedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#consideredFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#consideredFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MitigationPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation#Observation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#grants -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#grants">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#FieldArmy"/>
+        <rdfs:range rdf:resource="http://purl.org/abac-ontology#Permission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasAccess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasAccess">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasAttack -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasAttack">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+        <rdfs:range rdf:resource="http://purl.org/cyber/ucoAttack#Attack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasBandwidth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasBandwidth">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation#Observation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasPattern -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasPattern">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#CyberAttack"/>
+        <rdfs:range rdf:resource="http://purl.org/cyber/ucoAttackPattern#AttackPattern"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasResult">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Result#Result"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasSensor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MovableAsset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasVideoFeed -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#hasVideoFeed">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation#Observation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#VideoFeed"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#listedPlan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#listedPlan">
+        <rdfs:domain rdf:resource="http://www.purl.org/cyber/stix#CourseOfAction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MitigationPlan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#providedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#providedFor">
+        <rdfs:domain rdf:resource="http://purl.org/abac-ontology#Permission"/>
+        <rdfs:range rdf:resource="http://purl.org/abac-ontology#RequestedAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#request -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#request">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+        <rdfs:range rdf:resource="http://purl.org/abac-ontology#Permission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#Location -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Location">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeObservation#madeObservation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeObservation#madeObservation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation#Observation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/phenomenonTime#phenomenonTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/phenomenonTime#phenomenonTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/cyber/ucoAttackPattern#resultTime -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/cyber/ucoAttackPattern#resultTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#highRange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#highRange">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthAttack"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#lowRange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#lowRange">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthAttack"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+    
+
+
+    <!-- http://purl.org/abac-ontology#Permission -->
+
+    <owl:Class rdf:about="http://purl.org/abac-ontology#Permission"/>
+    
+
+
+    <!-- http://purl.org/abac-ontology#PermittedAction -->
+
+    <owl:Class rdf:about="http://purl.org/abac-ontology#PermittedAction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/abac-ontology#RequestedAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/abac-ontology#ProhibitedAction -->
+
+    <owl:Class rdf:about="http://purl.org/abac-ontology#ProhibitedAction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/abac-ontology#RequestedAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/abac-ontology#RequestedAction -->
+
+    <owl:Class rdf:about="http://purl.org/abac-ontology#RequestedAction"/>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigation -->
+
+    <owl:Class rdf:about="http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigation">
+        <rdfs:subClassOf rdf:resource="http://www.purl.org/cyber/stix#CourseOfAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigationPlan -->
+
+    <owl:Class rdf:about="http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigationPlan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MitigationPlan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/cyber/ucoAttack#Attack -->
+
+    <owl:Class rdf:about="http://purl.org/cyber/ucoAttack#Attack"/>
+    
+
+
+    <!-- http://purl.org/cyber/ucoAttackPattern#AttackPattern -->
+
+    <owl:Class rdf:about="http://purl.org/cyber/ucoAttackPattern#AttackPattern"/>
+    
+
+
+    <!-- http://www.purl.org/cyber/stix#CourseOfAction -->
+
+    <owl:Class rdf:about="http://www.purl.org/cyber/stix#CourseOfAction"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthAttack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthAttack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#CyberAttack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Battalion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Battalion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Blue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Blue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Owner"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Gray"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Brigade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Brigade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BrigadierGeneral -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BrigadierGeneral">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Captain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Captain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Company">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Corps -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Corps">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#CyberAttack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#CyberAttack">
+        <rdfs:subClassOf rdf:resource="http://purl.org/cyber/ucoAttack#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Division -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Division">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#FieldArmy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#FieldArmy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#General -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#General">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Gray -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Gray">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Owner"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Red"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ImmovableAsset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ImmovableAsset">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Kinetic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Kinetic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/cyber/ucoAttack#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#LieutenantColonel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#LieutenantColonel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#LieutenantGeneral -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#LieutenantGeneral">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MajorGeneral -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MajorGeneral">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MitigationPlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MitigationPlan"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MovableAsset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MovableAsset">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Owner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Owner"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Platoon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Platoon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ProtectionProgram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ProtectionProgram"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Red -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Red">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Owner"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#SecondLieutenant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#SecondLieutenant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Sensor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Sergeant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Sergeant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Soldier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Soldier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryPersonnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Squad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Squad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MilitaryUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#VideoFeed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#VideoFeed"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#Point -->
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation#Observation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation#Observation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Result#Result -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Result#Result"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#BandwidthObservation1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#BandwidthObservation1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation"/>
+        <hasResult rdf:resource="http://purl.org/cyber/stix/mitigates#21"/>
+        <phenomenonTime:phenomenonTime rdf:resource="http://purl.org/cyber/stix/mitigates#2021-10-11T01:30:10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#BandwidthObservation2 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#BandwidthObservation2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation"/>
+        <hasResult rdf:resource="http://purl.org/cyber/stix/mitigates#72"/>
+        <phenomenonTime:phenomenonTime rdf:resource="http://purl.org/cyber/stix/mitigates#2021-10-11T01:30:15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#BandwidthObservation3 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#BandwidthObservation3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation"/>
+        <hasResult rdf:resource="http://purl.org/cyber/stix/mitigates#129"/>
+        <phenomenonTime:phenomenonTime rdf:resource="http://purl.org/cyber/stix/mitigates#2021-10-11_01:30:20"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#BandwidthObservation4 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#BandwidthObservation4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthObservation"/>
+        <hasResult rdf:resource="http://purl.org/cyber/stix/mitigates#150"/>
+        <phenomenonTime:phenomenonTime rdf:resource="http://purl.org/cyber/stix/mitigates#2021-10-11_01:30:25"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#Observation1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#Observation1"/>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#Observation2 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#Observation2"/>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#Observation3 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#Observation3"/>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#Observation4 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#Observation4"/>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigation-stage1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigation-stage1">
+        <rdf:type rdf:resource="http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigationplan-25 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#bandwidth-attack-mitigationplan-25">
+        <rdf:type rdf:resource="http://purl.org/cyber/stix/mitigates#BandwidthAttackMitigationPlan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#protectionprogram-bandwidth-attack-stage1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#protectionprogram-bandwidth-attack-stage1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ProtectionProgram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#129 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#129">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Result#Result"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#150 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#150">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Result#Result"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#2021-10-11T01:30:10 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#2021-10-11T01:30:10">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#2021-10-11T01:30:15 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#2021-10-11T01:30:15">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#2021-10-11_01:30:20 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#2021-10-11_01:30:20">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#2021-10-11_01:30:25 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#2021-10-11_01:30:25">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#2021-10-25_05_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#2021-10-25_05_30_00"/>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#2021-10-25_06_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#2021-10-25_06_30_00"/>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#2021-10-25_08_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#2021-10-25_08_30_00"/>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#21 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#21">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Result#Result"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/cyber/stix/mitigates#72 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/cyber/stix/mitigates#72">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Result#Result"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Cam12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Cam12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Camera"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage1BA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage1BA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthAttack"/>
+        <highRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200.0</highRange>
+        <lowRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</lowRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage2BA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage2BA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthAttack"/>
+        <highRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">99.0</highRange>
+        <lowRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">51.0</lowRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage3BA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#Stage3BA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#BandwidthAttack"/>
+        <highRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</highRange>
+        <lowRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</lowRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UAS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UAS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MovableAsset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UAV1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UAV1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#MovableAsset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UGS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#UGS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ebiquity/ontologies/2021/7/battlefield#ImmovableAsset"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
